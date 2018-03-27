@@ -1,0 +1,74 @@
+.empty-row {
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.ngx-datatable.datatable .datatable-body-cell,
+.ngx-datatable .datatable-header-cell {
+  overflow-x: visible;
+}
+
+.ngx-datatable.datatable {
+  overflow: visible;
+}
+
+.ngx-datatable .datatable-footer .page-count {
+  line-height: 50px;
+  height: 50px;
+  padding: 0 1.2rem;
+}
+.ngx-datatable .datatable-footer .datatable-pager {
+  margin: 0 10px;
+  vertical-align: top;
+}
+.ngx-datatable .datatable-footer .datatable-pager ul li {
+  margin: 10px 0px;
+}
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  ul
+  li:not(.disabled).active
+  a,
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  ul
+  li:not(.disabled):hover
+  a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.ngx-datatable .datatable-footer .datatable-pager a {
+  height: 22px;
+  min-width: 24px;
+  line-height: 22px;
+  padding: 0;
+  border-radius: 3px;
+  margin: 0 3px;
+  text-align: center;
+  vertical-align: top;
+  text-decoration: none;
+  vertical-align: bottom;
+}
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  .datatable-icon-left,
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  .datatable-icon-skip,
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  .datatable-icon-right,
+.ngx-datatable
+  .datatable-footer
+  .datatable-pager
+  .datatable-icon-prev {
+  font-size: 18px;
+  line-height: 27px;
+  padding: 0 3px;
+}
