@@ -74,12 +74,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__core_core_module__ = __webpack_require__("./src/app/core/core.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing__ = __webpack_require__("./src/app/app.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__blog_blog_module__ = __webpack_require__("./src/app/blog/blog.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__syd_syd_module__ = __webpack_require__("./src/app/syd/syd.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -100,7 +102,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3__root_root_module__["a" /* RootModule */],
                 __WEBPACK_IMPORTED_MODULE_4__core_core_module__["a" /* CoreModule */],
                 __WEBPACK_IMPORTED_MODULE_5__app_routing__["a" /* AppRouting */],
-                __WEBPACK_IMPORTED_MODULE_6__blog_blog_module__["a" /* BlogModule */]
+                __WEBPACK_IMPORTED_MODULE_6__blog_blog_module__["a" /* BlogModule */],
+                __WEBPACK_IMPORTED_MODULE_7__syd_syd_module__["a" /* SydModule */]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
@@ -559,7 +562,7 @@ module.exports = ".container {\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\
 /***/ "./src/app/root/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <mat-toolbar class=\"top-bar\" color=\"primary\">\n    <button mat-button routerLink=\"/home/blog\">\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 256 272\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid\">\n        <path d=\"M.1 45.522L125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522z\" fill=\"#E23237\" />\n        <path d=\"M255.104 44.725L125.908.697v270.444l108.277-59.866 20.919-166.55z\" fill=\"#B52E31\" />\n        <path d=\"M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z\"\n          fill=\"#FFF\" />\n      </svg>\n      <span>Home</span>\n    </button>\n    <button mat-button routerLink=\"/home/blog\">Blog</button>\n  </mat-toolbar>\n\n  <router-outlet></router-outlet>\n\n</div>\n"
+module.exports = "<div class=\"container\">\n  <mat-toolbar class=\"top-bar\" color=\"primary\">\n    <button mat-button routerLink=\"/home/blog\">\n      <svg width=\"40\" height=\"40\" viewBox=\"0 0 256 272\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid\">\n        <path d=\"M.1 45.522L125.908.697l129.196 44.028-20.919 166.45-108.277 59.966-106.583-59.169L.1 45.522z\" fill=\"#E23237\" />\n        <path d=\"M255.104 44.725L125.908.697v270.444l108.277-59.866 20.919-166.55z\" fill=\"#B52E31\" />\n        <path d=\"M126.107 32.274L47.714 206.693l29.285-.498 15.739-39.347h70.325l17.233 39.845 27.99.498-82.179-174.917zm.2 55.882l26.496 55.383h-49.806l23.31-55.383z\"\n          fill=\"#FFF\" />\n      </svg>\n      <span>Home</span>\n    </button>\n    <button mat-button routerLink=\"/home/blog\">Blog</button>\n    <button mat-button routerLink=\"/home/syd\">Syd</button>\n  </mat-toolbar>\n\n  <router-outlet></router-outlet>\n\n</div>\n"
 
 /***/ }),
 
@@ -697,11 +700,184 @@ var RootModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RootRoutes; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home_component__ = __webpack_require__("./src/app/root/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__blog_blog_routing__ = __webpack_require__("./src/app/blog/blog.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__syd_syd_syd_component__ = __webpack_require__("./src/app/syd/syd/syd.component.ts");
+
 
 
 var RootRoutes = [
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */], children: __WEBPACK_IMPORTED_MODULE_1__blog_blog_routing__["a" /* BlogRoutes */].slice() }
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */], children: __WEBPACK_IMPORTED_MODULE_1__blog_blog_routing__["a" /* BlogRoutes */].concat([
+            { path: 'syd', component: __WEBPACK_IMPORTED_MODULE_2__syd_syd_syd_component__["a" /* SydComponent */] }
+        ]) }
 ];
+
+
+/***/ }),
+
+/***/ "./src/app/syd/syd.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SydModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__syd_syd_component__ = __webpack_require__("./src/app/syd/syd/syd.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var SydModule = /** @class */ (function () {
+    function SydModule() {
+    }
+    SydModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormsModule */]
+            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_2__syd_syd_component__["a" /* SydComponent */]]
+        })
+    ], SydModule);
+    return SydModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/syd/syd/syd.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".search {\r\n  width: 70%;\r\n  position: relative;\r\n  margin: 30px auto;\r\n  height: 85px;\r\n}\r\n\r\ninput {\r\n  width: 100%;\r\n  height: 30px;\r\n  border-style: none;\r\n  border: none;\r\n  border-bottom: 1px solid blue;\r\n  outline: none;\r\n  background: rgba(0, 0, 0, 0);\r\n  font-size: 18px;\r\n  line-height: 30px;\r\n}\r\n\r\nbutton {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: block;\r\n  color: #fff;\r\n  letter-spacing: 1px;\r\n  border: none;\r\n  background: #3385ff;\r\n  border-bottom: 1px solid #2d78f4;\r\n  outline: medium;\r\n  -webkit-appearance: none;\r\n  -webkit-border-radius: 0;\r\n  font-size: 16px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.left {\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  float: left;\r\n  width: 70%;\r\n  padding-right: 40px;\r\n}\r\n\r\n.right {\r\n  float: right;\r\n  width: 30%;\r\n  height: 82px;\r\n}\r\n\r\n.box {\r\n  width: 70%;\r\n  position: relative;\r\n  margin: 0 auto;\r\n}\r\n\r\n.content {\r\n  width: 100%;\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -ms-flex-pack: distribute;\r\n      justify-content: space-around;\r\n}\r\n\r\n.every {\r\n  width: 30px;\r\n  height: 30px;\r\n  margin: 10px;\r\n  border: 1px solid #3385ff;\r\n  line-height: 30px;\r\n  font-size: 16px;\r\n  text-align: center;\r\n}\r\n\r\n.title {\r\n  width: 100%;\r\n  position: relative;\r\n  padding-top: 30px;\r\n  height: 65px;\r\n}\r\n\r\n.title h2,\r\n.title p {\r\n  text-align: center;\r\n}\r\n\r\n.title p {\r\n  margin-top: 10px;\r\n}\r\n\r\n.title .today span {\r\n  color: blue;\r\n  font-weight: bold;\r\n  font-size: 16px;\r\n}\r\n\r\n.tomorrow {\r\n  position: fixed;\r\n  bottom: 10px;\r\n  left: 50%;\r\n  -webkit-transform: translateX(-50%);\r\n          transform: translateX(-50%);\r\n  width: 300px;\r\n  text-align: center;\r\n  color: #555;\r\n  z-index: 0;\r\n}\r\n\r\n.bg {\r\n  position: fixed;\r\n  width: 100%;\r\n  height: 100%;\r\n  background: url(\"/./assets/img/bd.jpg\") no-repeat;\r\n  background-size: cover;\r\n}\r\n\r\n.container {\r\n  height: 100%;\r\n  width: 100%;\r\n  position: relative;\r\n  padding-top: 64px;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n}\r\n\r\n@media (max-width: 599px) {\r\n  .container {\r\n    padding-top: 56px;\r\n  }\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/syd/syd/syd.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <div class=\"bg\"></div>\n  <div class=\"title\">\n    <h2>SYD打怪抽查</h2>\n    <p class=\"today\">\n      今日收图人：\n      <span>{{todayPerson}}</span>\n      <i style=\"padding-left:20px;\">{{todayFormat}}</i>\n    </p>\n  </div>\n  <div class=\"search\">\n    <div class=\"left\">\n      <input type=\"number\" id=\"sum\" placeholder=\"输入成员总数\" [(ngModel)]=\"totalPeople\">\n      <input type=\"number\" id=\"num\" placeholder=\"输入抽查人数\" style=\"margin-top:20px;\" [(ngModel)]=\"wantSelectNum\">\n    </div>\n    <div class=\"right\">\n      <button id=\"btn\" (click)=\"getMember()\" [disabled]=\"flag\" >抽取</button>\n    </div>\n  </div>\n  <div class=\"box\">\n    <h3 style=\"text-align:center;\"></h3>\n    <div class=\"content\">\n      <div class=\"every\" *ngFor=\"let item of selectList\">{{item}}</div>\n    </div>\n  </div>\n  <p class=\"tomorrow\">\n    明日收图人：\n    <span>{{nextPerson}}</span>\n    <i style=\"padding-left:20px;\">{{tomorrowFormat}}</i>\n  </p>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/syd/syd/syd.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SydComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SydComponent = /** @class */ (function () {
+    function SydComponent() {
+        this.adminList = ['幻影', '蚂蚁', '基恒', '老铁', '卡兹', '乔丹', '向北', '辰', '阿诚']; // 抽图人员名单
+    }
+    SydComponent.prototype.ngOnInit = function () {
+        this.startDay = new Date('Mar 17 2018 00:00:00 GMT+0800').getTime(); // 卡兹
+        this.targetDay = new Date().getTime(); // now
+        this.todayPerson = this.adminList[this.datedifference(this.startDay, this.targetDay) % this.adminList.length];
+        this.nextPerson = this.adminList[(this.datedifference(this.startDay, this.targetDay) + 1) % this.adminList.length];
+        this.todayFormat = this.getNowFormatDate('today');
+        this.tomorrowFormat = this.getNowFormatDate('tomorrow');
+    };
+    SydComponent.prototype.getMember = function () {
+        var _this = this;
+        this.flag = true;
+        if (!this.totalPeople) {
+            alert('请输入总人数！');
+            this.flag = false;
+            return;
+        }
+        else if (this.totalPeople > 100) {
+            alert('总人数不得大于100！');
+            this.flag = false;
+            return;
+        }
+        if (!this.wantSelectNum) {
+            alert('请输入抽查人数！');
+            this.flag = false;
+            return;
+        }
+        else if (this.wantSelectNum >= this.totalPeople) {
+            alert('抽查人数不得大于总人数！');
+            this.flag = false;
+            return;
+        }
+        clearInterval(this.clearTime);
+        this.selectList = [];
+        var arr = [];
+        var _loop_1 = function (i) {
+            var temp = this_1.getRandom(this_1.totalPeople);
+            arr.some(function (it) { return it === temp; }) ? i-- : arr.push(temp);
+            out_i_1 = i;
+        };
+        var this_1 = this, out_i_1;
+        for (var i = 0; i < this.wantSelectNum; i++) {
+            _loop_1(i);
+            i = out_i_1;
+        }
+        arr.sort(function (a, b) { return a - b; });
+        for (var i = 0; i < arr.length; i++) {
+            (function (j) {
+                _this.clearTime = setTimeout(function () {
+                    _this.selectList.push(arr[j]);
+                    if (j === arr.length - 1) {
+                        console.log(j);
+                        _this.flag = false;
+                    }
+                }, 100 * j);
+            })(i);
+        }
+    };
+    SydComponent.prototype.getRandom = function (sum) {
+        return Math.ceil(Math.random() * sum);
+    };
+    SydComponent.prototype.datedifference = function (sstartDate, sthatDate) {
+        var dateSpan = sthatDate - sstartDate;
+        return Math.floor(dateSpan / (24 * 3600 * 1000));
+    };
+    SydComponent.prototype.getNowFormatDate = function (message) {
+        var date = new Date();
+        if (message === 'tomorrow') {
+            date.setTime(date.getTime() + 24 * 60 * 60 * 1000);
+        }
+        var seperator1 = '-';
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = '0' + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = '0' + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    };
+    SydComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-syd',
+            template: __webpack_require__("./src/app/syd/syd/syd.component.html"),
+            styles: [__webpack_require__("./src/app/syd/syd/syd.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SydComponent);
+    return SydComponent;
+}());
+
 
 
 /***/ }),
@@ -739,7 +915,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* enableProdMode */])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
